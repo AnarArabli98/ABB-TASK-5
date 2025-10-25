@@ -7,5 +7,6 @@ public interface Transport {
     String getTransportInfo();
     double calculateFare(double distance, int passangers);
 
+    
 
 }
