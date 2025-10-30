@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ABBTECH3.iml" filepath="$PROJECT_DIR$/ABBTECH3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ABBTECH.iml" filepath="$PROJECT_DIR$/ABBTECH.iml" />
     </modules>
   </component>
 </project>
