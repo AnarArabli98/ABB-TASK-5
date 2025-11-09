@@ -13,10 +13,12 @@ public class BusStop {
     }
 
     public String getName() {
+
         return name;
     }
 
     public Queue<Passenger> getWaitingPassengers() {
+
         return waitingPassengers;
     }
 
