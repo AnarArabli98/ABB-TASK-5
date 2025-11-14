@@ -46,15 +46,15 @@ public class Practice9 {
 
         List<Book> books = Arrays.asList(b1,b2,b3,b4,b5,b6);
 
-        User u1 = new User("Anar", 25, Arrays.asList(
-                new BorrowRecord(b1, LocalDate.of(2025,9,1).atStartOfDay(),LocalDate.of(2025,9,10)),
-                new BorrowRecord(b2, LocalDate.of(2025,10,5).atStartOfDay(),null)));
+//        User u1 = new User("Anar", 25, Arrays.asList(
+//                new BorrowRecord(b1, LocalDate.of(2025,9,1).atStartOfDay(),LocalDate.of(2025,9,10)),
+//                new BorrowRecord(b2, LocalDate.of(2025,10,5).atStartOfDay(),null)));
 
-        List<User> users = Arrays.asList(u1);
+//        List<User> users = Arrays.asList(u1);
 
-        LibraryService  libraryService = new LibraryService(books,users);
-        libraryService.sortBooks();
-        libraryService.analizLibrary();
+//        LibraryService  libraryService = new LibraryService(books,users);
+//        libraryService.sortBooks();
+//        libraryService.analizLibrary();
 
 
 
