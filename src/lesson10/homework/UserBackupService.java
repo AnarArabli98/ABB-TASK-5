@@ -38,18 +38,14 @@ public class UserBackupService {
         try {
             Path path = Paths.get(sourceFile);
             Path backupPath = Paths.get(backupDir);
-            Path targetFile = path.resolve(path.getFileName().toString());
 
             // Backup folder yoxdursa yaradılır
             if (!Files.exists(backupPath)) {
                 Files.createDirectories(backupPath);
             }
 
-            // Backup faylın tam yolu
-            Path backupFile = backupPath.resolve(path.getFileName());
-
             // Faylı kopyala
-            Files.copy(path, backupFile, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(path, backupPath, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Backup elave olundu.");
 
         }catch (IOException e){

@@ -60,8 +60,9 @@ public class Practize {
         List<User> loadUsers = service.loadUsers(dataFile);
         System.out.println("Loaded users from file");
         loadUsers.forEach(System.out::println);
+        service.backFile(dataFile,backupDir);
 
-        service.deleteBackup(backupFile);
+        service.deleteBackup(backupDir);
         System.out.println("Deleted backup file");
 
 
