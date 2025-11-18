@@ -8,10 +8,10 @@ public class User {
     private int age;
     private List<BorrowRecord> borrowHistory;
 
-    public User(String name, int age) {
+    public User(String name, int age, List<BorrowRecord> borrowHistory) {
         this.name = name;
         this.age = age;
-        this.borrowHistory = new ArrayList<>();
+        this.borrowHistory = borrowHistory;
     }
 
     @Override

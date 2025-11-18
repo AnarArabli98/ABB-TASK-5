@@ -1,13 +1,14 @@
 package lesson9.homework;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class BorrowRecord {
     private Book book;
     private LocalDateTime borrowDate;
-    private LocalDateTime returnDate;
+    private LocalDate returnDate;
 
-    public BorrowRecord(Book book, LocalDateTime borrowDate, LocalDateTime returnDate) {
+    public BorrowRecord(Book book, LocalDateTime borrowDate, LocalDate returnDate) {
         this.book = book;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
@@ -38,14 +39,14 @@ public class BorrowRecord {
         this.borrowDate = borrowDate;
     }
 
-    public LocalDateTime getReturnDate() {
+    public LocalDate getReturnDate() {
         return returnDate;
     }
     public boolean isReturned() {
         return returnDate != null;
     }
 
-    public void setReturnDate(LocalDateTime returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
 
