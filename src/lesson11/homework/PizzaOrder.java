@@ -2,8 +2,6 @@ package lesson11.homework;
 
 import java.util.Random;
 
-import static java.rmi.server.LogStream.log;
-
 public class PizzaOrder implements Runnable{
     private final int ordernum;
     private long startTime;

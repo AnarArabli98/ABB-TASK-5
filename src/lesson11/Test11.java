@@ -1,6 +1,9 @@
 package lesson11;
 
 import lesson11.classwork.Counter;
+import lesson11.corekzavodu.BreadStore;
+import lesson11.corekzavodu.Consumer;
+import lesson11.corekzavodu.Producer;
 import lesson11.homework.PizzaOrder;
 
 public class Test11 {
@@ -86,43 +89,60 @@ public class Test11 {
 
          // task 11  --------------------------------
 
-         long simulationTime = System.currentTimeMillis();
+//         long simulationTime = System.currentTimeMillis();
+//
+//         PizzaOrder[] order = new PizzaOrder[5];
+//         Thread[] threads = new Thread[5];
+//
+//         for (int i = 0; i < order.length; i++) {
+//             order[i] = new PizzaOrder(i+1);
+//             threads[i] = new Thread(order[i], "Pizza " + (i+1));
+//         }
+//
+//         for (Thread thread : threads) {
+//             thread.start();
+//         }
+//         for (Thread thread : threads) {
+//             try {
+//                 thread.join();
+//             } catch (InterruptedException e) {
+//                 e.printStackTrace();
+//             }
+//         }
+//         long simulationTime2 = System.currentTimeMillis();
+//         long totalttt2 = (simulationTime2 - simulationTime)/1000;
+//
+//         PizzaOrder fastest = order[0];
+//         for (PizzaOrder o : order) {
+//             if (o.getTotalTime() < fastest.getTotalTime()) {
+//                 fastest = o;
+//             }
+//         }
+//
+//         System.out.println("=======================================");
+//         System.out.println("All orders completed");
+//         System.out.println("Total simulation time: " + totalttt2 + " seconds");
+//         System.out.println("Fastest order: Order #" + fastest.getOrdernum() +
+//                 " → " + fastest.getTotalTime() + " sec");
+//         System.out.println("=======================================");
 
-         PizzaOrder[] order = new PizzaOrder[5];
-         Thread[] threads = new Thread[5];
 
-         for (int i = 0; i < order.length; i++) {
-             order[i] = new PizzaOrder(i+1);
-             threads[i] = new Thread(order[i], "Pizza " + (i+1));
-         }
+         // ----------------------------------------------------
 
-         for (Thread thread : threads) {
-             thread.start();
-         }
-         for (Thread thread : threads) {
-             try {
-                 thread.join();
-             } catch (InterruptedException e) {
-                 e.printStackTrace();
-             }
-         }
-         long simulationTime2 = System.currentTimeMillis();
-         long totalttt2 = (simulationTime2 - simulationTime)/1000;
+         BreadStore breadStore = new BreadStore();
 
-         PizzaOrder fastest = order[0];
-         for (PizzaOrder o : order) {
-             if (o.getTotalTime() < fastest.getTotalTime()) {
-                 fastest = o;
-             }
-         }
+         Thread producer = new Thread(new Producer(breadStore),"Producer1");
+         Thread producer2 = new Thread(new Producer(breadStore),"Producer2");
 
-         System.out.println("=======================================");
-         System.out.println("All orders completed!");
-         System.out.println("Total simulation time: " + totalttt2 + " seconds");
-         System.out.println("Fastest order: Order #" + fastest.getOrdernum() +
-                 " → " + fastest.getTotalTime() + " sec");
-         System.out.println("=======================================");
+         Thread concumer  = new Thread(new Consumer(breadStore),"Consumer1");
+         Thread consumer2 = new Thread(new Consumer(breadStore),"Consumer2");
+         Thread consumer3 = new Thread(new Consumer(breadStore),"Consumer3");
 
+         producer.start();
+         producer2.start();
+         concumer.start();
+         consumer2.start();
+         consumer3.start();
 
     }
 }
